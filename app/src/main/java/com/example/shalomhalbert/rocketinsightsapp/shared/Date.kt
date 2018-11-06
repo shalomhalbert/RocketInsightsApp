@@ -1,4 +1,4 @@
-package com.example.shalomhalbert.rocketinsightsapp.models
+package com.example.shalomhalbert.rocketinsightsapp.shared
 
 import com.google.gson.annotations.Expose
 
