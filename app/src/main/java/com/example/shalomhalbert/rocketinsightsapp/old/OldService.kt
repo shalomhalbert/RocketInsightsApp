@@ -5,7 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface OldService {
-    //Regular request
     @GET("api/enhanced/all")
     fun dates(): Call<List<Date>>
 }

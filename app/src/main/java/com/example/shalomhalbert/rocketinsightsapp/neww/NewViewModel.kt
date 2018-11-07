@@ -3,7 +3,6 @@ package com.example.shalomhalbert.rocketinsightsapp.neww
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.example.shalomhalbert.rocketinsightsapp.old.OldRepository
 import com.example.shalomhalbert.rocketinsightsapp.shared.Date
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +21,7 @@ class NewViewModel: ViewModel() {
 
     fun refreshDates() {
         uiScope.launch {
-            NewRepository.getDeferredDates(_dates)
+            NewRepository.getDates(_dates)
         }
     }
 

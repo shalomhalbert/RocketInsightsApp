@@ -10,5 +10,6 @@ object OldRetrofitGenerator {
             .addConverterFactory(GsonConverterFactory.create())
 
     fun <S: OldService> createDateService(service: Class<S>): S = retrofitBuilder
-            .build().create(service)
+            .build()
+            .create(service)
 }

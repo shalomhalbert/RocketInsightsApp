@@ -13,15 +13,15 @@ object NewRepository {
         NewRetrofitGenerator.createService(NewService::class.java)
     }
 
-    suspend fun getDeferredDates(liveData: MutableLiveData<List<Date>>) {
+    suspend fun getDates(liveData: MutableLiveData<List<Date>>) {
         withContext(Dispatchers.IO) {
             try {
-                val result = client.deferredDates().await()
+                val result = client.dates().await()
                 liveData.postValue(result)
             } catch (e: HttpException) {
                 Log.e(TAG, "HttpException code: ${e.code()}")
             } catch (e: Throwable) {
-                Log.e(TAG, "deferredDates() failed-- " +
+                Log.e(TAG, "dates() failed-- " +
                         "Cause: ${e.cause}, Message: ${e.message}")
                 throw e
             }
