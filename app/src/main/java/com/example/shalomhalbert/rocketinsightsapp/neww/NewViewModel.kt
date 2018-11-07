@@ -3,14 +3,14 @@ package com.example.shalomhalbert.rocketinsightsapp.neww
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.example.shalomhalbert.rocketinsightsapp.shared.EpicRepository
+import com.example.shalomhalbert.rocketinsightsapp.old.OldRepository
 import com.example.shalomhalbert.rocketinsightsapp.shared.Date
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class NewDayViewModel: ViewModel() {
+class NewViewModel: ViewModel() {
     /** This is the job for all coroutines started by this ViewModel. */
     private val viewModelJob = Job()
     /** This is the main scope for all coroutines launched by MainViewModel. */
@@ -23,7 +23,7 @@ class NewDayViewModel: ViewModel() {
 
     fun refreshDates() {
         uiScope.launch {
-            EpicRepository.getDeferredDates(_dates)
+            NewRepository.getDeferredDates(_dates)
         }
     }
 

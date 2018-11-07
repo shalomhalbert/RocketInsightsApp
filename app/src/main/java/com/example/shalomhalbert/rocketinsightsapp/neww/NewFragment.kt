@@ -1,4 +1,4 @@
-package com.example.shalomhalbert.rocketinsightsapp.old
+package com.example.shalomhalbert.rocketinsightsapp.neww
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -13,10 +13,10 @@ import com.example.shalomhalbert.rocketinsightsapp.shared.DayAdapter
 import com.example.shalomhalbert.rocketinsightsapp.shared.Date
 import kotlinx.android.synthetic.main.fragment_day_list.*
 
-class OldDayFragment : Fragment() {
+class NewFragment : Fragment() {
 
     private val viewModel by lazy {
-        ViewModelProviders.of(this).get(OldDayViewModel::class.java)
+        ViewModelProviders.of(this).get(NewViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
