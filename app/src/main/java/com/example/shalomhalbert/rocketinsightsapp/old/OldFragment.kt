@@ -19,8 +19,10 @@ class OldFragment : Fragment() {
         ViewModelProviders.of(this).get(OldViewModel::class.java)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
-            = layoutInflater.inflate(R.layout.fragment_day_list, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View?
+            = layoutInflater.inflate(R.layout.fragment_day_list, container,
+            false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

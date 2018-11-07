@@ -11,14 +11,18 @@ import retrofit2.Response
 
 object OldRepository {
     private val TAG: String = OldRepository::class.java.simpleName
-    private val client by lazy { OldRetrofitGenerator.createDateService(OldService::class.java) }
+    private val client by lazy {
+        OldRetrofitGenerator.createDateService(OldService::class.java)
+    }
 
     fun getDates(liveData: MutableLiveData<List<Date>>) {
         client.dates().enqueue(object : Callback<List<Date>> {
-            override fun onResponse(call: Call<List<Date>>, response: Response<List<Date>>) {
+            override fun onResponse(call: Call<List<Date>>,
+                                    response: Response<List<Date>>) {
                 when (response.isSuccessful) {
                     true -> liveData.postValue(response.body())
-                    false -> Log.e(TAG, "Request error code: ${response.code()}")
+                    false -> Log.e(TAG, "Request error code: " +
+                            "${response.code()}")
                 }
             }
 
