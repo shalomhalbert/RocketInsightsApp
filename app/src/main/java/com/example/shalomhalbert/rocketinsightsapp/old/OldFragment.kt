@@ -36,7 +36,7 @@ class OldFragment : Fragment() {
     }
 
     private fun datesSubscription() {
-        viewModel.dates.observe(this, Observer<List<Date>> { dates ->
+        viewModel.dates.observe(viewLifecycleOwner, Observer<List<Date>> { dates ->
             dates?.let {
                 val adapter = recyclerView.adapter as DayAdapter
                 adapter.addDates(it)

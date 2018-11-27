@@ -2,6 +2,7 @@ package com.example.shalomhalbert.rocketinsightsapp.shared
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.transaction
 import com.example.shalomhalbert.rocketinsightsapp.R
 import com.example.shalomhalbert.rocketinsightsapp.neww.NewFragment
 import com.example.shalomhalbert.rocketinsightsapp.old.OldFragment
@@ -19,14 +20,15 @@ class MainActivity : AppCompatActivity() {
         showNewDayFrag()
     }
 
-//Todo: Update transactions
     private fun showOldDayFrag() {
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainer,
-                OldFragment()).commit()
+        supportFragmentManager.transaction {
+            add(R.id.fragmentContainer, OldFragment())
+        }
     }
 
     private fun showNewDayFrag() {
-        supportFragmentManager.beginTransaction().add(R.id.fragmentContainer,
-                NewFragment()).commit()
+        supportFragmentManager.transaction {
+            add(R.id.fragmentContainer, NewFragment())
+        }
     }
 }
