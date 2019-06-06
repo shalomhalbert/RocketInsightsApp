@@ -1,4 +1,4 @@
-package com.example.shalomhalbert.rocketinsightsapp
+package com.example.shalomhalbert.rocketinsightsapp.model
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import retrofit2.Retrofit

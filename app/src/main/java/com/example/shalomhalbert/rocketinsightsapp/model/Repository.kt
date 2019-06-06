@@ -1,4 +1,4 @@
-package com.example.shalomhalbert.rocketinsightsapp
+package com.example.shalomhalbert.rocketinsightsapp.model
 
 import android.util.Log
 import kotlinx.coroutines.Dispatchers

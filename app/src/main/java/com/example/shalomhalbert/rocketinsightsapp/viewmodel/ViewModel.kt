@@ -1,9 +1,9 @@
-package com.example.shalomhalbert.rocketinsightsapp
+package com.example.shalomhalbert.rocketinsightsapp.viewmodel
 
-import androidx.databinding.ObservableField
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.shalomhalbert.rocketinsightsapp.model.Date
+import com.example.shalomhalbert.rocketinsightsapp.model.Repository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

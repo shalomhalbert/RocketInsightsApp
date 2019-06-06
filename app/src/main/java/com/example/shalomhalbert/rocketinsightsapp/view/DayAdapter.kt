@@ -1,9 +1,10 @@
-package com.example.shalomhalbert.rocketinsightsapp
+package com.example.shalomhalbert.rocketinsightsapp.view
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.shalomhalbert.rocketinsightsapp.databinding.RvDayListItemBinding
+import com.example.shalomhalbert.rocketinsightsapp.model.Date
 
 class DayAdapter : RecyclerView.Adapter<DayAdapter.DayListViewHolder>() {
     private val dates = mutableListOf<Date>()
