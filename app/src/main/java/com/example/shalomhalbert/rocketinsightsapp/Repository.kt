@@ -1,29 +1,24 @@
 package com.example.shalomhalbert.rocketinsightsapp
 
-import androidx.lifecycle.MutableLiveData
 import android.util.Log
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 
-object Repository {
+class Repository (private val service: Service) {
     private val TAG: String = Repository::class.java.simpleName
-    private val client by lazy {
-        RetrofitGenerator.createService(Service::class.java)
-    }
 
-    suspend fun getDates(liveData: MutableLiveData<List<Date>>) {
-        withContext(Dispatchers.IO) {
+    suspend fun getDates(): List<Date> =
+         withContext(Dispatchers.IO) {
             try {
-                val result = client.dates().await()
-                liveData.postValue(result)
+                service.dates().await()
             } catch (e: HttpException) {
                 Log.e(TAG, "HttpException code: ${e.code()}")
+                emptyList<Date>()
             } catch (e: Throwable) {
                 Log.e(TAG, "dates() failed-- " +
                         "Cause: ${e.cause}, Message: ${e.message}")
                 throw e
             }
         }
-    }
 }

@@ -19,7 +19,7 @@ class DayAdapter : RecyclerView.Adapter<DayAdapter.DayListViewHolder>() {
         holder.binding.date = date
     }
 
-    override fun getItemCount(): Int = dates!!.size
+    override fun getItemCount(): Int = dates.size
 
     fun addDates(newDates: List<Date>) {
         dates.addAll(newDates)

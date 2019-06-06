@@ -1,5 +1,6 @@
 package com.example.shalomhalbert.rocketinsightsapp
 
+import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,24 +9,16 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class ViewModel: ViewModel() {
+class MainViewModel(private val repository: Repository): ViewModel() {
     private val viewModelJob = Job()
     private val uiScope =
             CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    private val _dates = MutableLiveData<List<Date>>()
-    val dates: LiveData<List<Date>>
-        get() = _dates
+    val dates = MutableLiveData<List<Date>>()
 
-
-    fun refreshDates() {
+    init {
         uiScope.launch {
-            Repository.getDates(_dates)
+            dates.postValue(repository.getDates())
         }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        viewModelJob.cancel()
     }
 }
