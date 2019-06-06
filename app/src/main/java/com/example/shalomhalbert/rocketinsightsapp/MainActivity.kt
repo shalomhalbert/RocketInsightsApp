@@ -8,10 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_day_list.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-/**
- * Base activity for all fragments
- */
-
 class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by viewModel()
