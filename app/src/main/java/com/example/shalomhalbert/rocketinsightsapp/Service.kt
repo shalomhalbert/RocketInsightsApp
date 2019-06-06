@@ -1,6 +1,5 @@
-package com.example.shalomhalbert.rocketinsightsapp.neww
+package com.example.shalomhalbert.rocketinsightsapp
 
-import com.example.shalomhalbert.rocketinsightsapp.shared.Date
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 

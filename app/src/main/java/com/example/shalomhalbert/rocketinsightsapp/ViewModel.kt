@@ -1,9 +1,8 @@
-package com.example.shalomhalbert.rocketinsightsapp.neww
+package com.example.shalomhalbert.rocketinsightsapp
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.shalomhalbert.rocketinsightsapp.shared.Date
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
