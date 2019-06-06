@@ -3,10 +3,10 @@ package com.example.shalomhalbert.rocketinsightsapp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.fragment_day_list.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * Base activity for all fragments
@@ -14,10 +14,7 @@ import kotlinx.android.synthetic.main.fragment_day_list.*
 
 class MainActivity : AppCompatActivity() {
 
-    //Todo: Inject
-    private val viewModel by lazy {
-        ViewModelProviders.of(this).get(MainViewModel::class.java)
-    }
+    private val viewModel: MainViewModel by viewModel()
 
 
 
