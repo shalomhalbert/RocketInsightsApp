@@ -6,10 +6,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 
-object NewRepository {
-    private val TAG: String = NewRepository::class.java.simpleName
+object Repository {
+    private val TAG: String = Repository::class.java.simpleName
     private val client by lazy {
-        NewRetrofitGenerator.createService(NewService::class.java)
+        RetrofitGenerator.createService(Service::class.java)
     }
 
     suspend fun getDates(liveData: MutableLiveData<List<Date>>) {

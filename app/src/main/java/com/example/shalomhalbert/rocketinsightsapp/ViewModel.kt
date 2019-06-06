@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class NewViewModel: ViewModel() {
+class ViewModel: ViewModel() {
     private val viewModelJob = Job()
     private val uiScope =
             CoroutineScope(Dispatchers.Main + viewModelJob)
@@ -20,7 +20,7 @@ class NewViewModel: ViewModel() {
 
     fun refreshDates() {
         uiScope.launch {
-            NewRepository.getDates(_dates)
+            Repository.getDates(_dates)
         }
     }
 
