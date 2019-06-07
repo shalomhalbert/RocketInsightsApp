@@ -2,6 +2,7 @@ package com.example.shalomhalbert.rocketinsightsapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.databinding.Observable
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,10 +25,15 @@ class MainActivity : AppCompatActivity() {
             adapter = DayAdapter()
         }
 
-        viewModel.dates.observe(this, Observer {
-            val adapter = recyclerView.adapter as DayAdapter
-            adapter.addDates(it)
+        viewModel.dates.addOnPropertyChangedCallback(object :
+            Observable.OnPropertyChangedCallback() {
+            override fun onPropertyChanged(sender: Observable?, propertyId: Int) {
+                val adapter = recyclerView.adapter as DayAdapter
+                viewModel.dates.get()?.let { adapter.addDates(it) }
+            }
         })
+
+        viewModel.onUpdateList()
 
     }
 
