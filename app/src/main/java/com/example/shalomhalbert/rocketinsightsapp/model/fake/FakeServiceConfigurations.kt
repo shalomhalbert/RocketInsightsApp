@@ -3,7 +3,6 @@ package com.example.shalomhalbert.rocketinsightsapp.model.fake
 import com.example.shalomhalbert.rocketinsightsapp.model.Date
 import retrofit2.HttpException
 import retrofit2.Response
-import retrofit2.http.Body
 
 sealed class FakeServiceConfigurations
 data class FilledList(val filledList: List<Date> = defaultResponse) : FakeServiceConfigurations() {
